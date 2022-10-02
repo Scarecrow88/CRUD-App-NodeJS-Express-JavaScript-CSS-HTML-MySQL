@@ -1,0 +1,63 @@
+<%- include('includes/head.ejs') %>
+    <div id="alt-one" class="alert rmvalert">
+        Alert
+    </div>
+    <main>
+        <div class="databox">
+            <form id="formbox" action="/add" method="post">
+                <h2>Form</h2>
+                <div>
+                    <input id="name" class="textfield" name="PEONAME" autocomplete="off" type="text" placeholder="Enter name" required>
+                </div>
+                <div>
+                    <input id="code" class="textfield" name="PEOCITY" autocomplete="off" type="text" placeholder="Enter city" required>
+                </div>
+                <div>
+                    <input id="code" class="textfield" name="PEOPHONE" autocomplete="off" type="text" placeholder="Enter phone">
+                </div>
+                <div>
+                    <button class="formbutton" type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+        <div class="boxtab">
+            <table id="employeelist">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Name</th>
+                        <th>City</th>
+                        <th>Phone</th>
+                        <th>Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (data) { %>
+                        <% for (let i=0; i < data.length; i ++) { %>
+                            <tr>
+                                <td>
+                                    <%= (i + 1) %>
+                                </td>
+                                <td>
+                                    <%= data [i].PEONAME %>
+                                </td>
+                                <td>
+                                    <%= data [i].PEOCITY %>
+                                </td>
+                                <td>
+                                    <%= data [i].PEOPHONE %>
+                                </td>
+                                <td>
+                                    <div class="initcell" id="init">
+                                        <a href="/delete/<%= data [i].PEOID %>" class="butbox">Delete</a>
+                                        <a href="/edit/<%= data [i].PEOID %>" class="butbox">Edit</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        <% } %>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+<%- include('includes/foot.ejs') %>

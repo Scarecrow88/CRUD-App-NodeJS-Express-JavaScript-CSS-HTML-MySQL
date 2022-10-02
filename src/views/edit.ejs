@@ -1,0 +1,21 @@
+<%- include('includes/head.ejs') %>
+    <main>
+        <div class="databox">
+            <form id="formbox" action="/edit/<%= data.PEOID %>" method="post">
+                <h2>Form</h2>
+                <div>
+                    <input id="name" class="textfield" name="PEONAME" autocomplete="off" value="<%= data.PEONAME %>" type="text" placeholder="Enter name">
+                </div>
+                <div>
+                    <input id="code" class="textfield" name="PEOCITY" autocomplete="off" value="<%= data.PEOCITY %>" type="text" placeholder="Enter city">
+                </div>
+                <div>
+                    <input id="code" class="textfield" name="PEOPHONE" autocomplete="off" value="<%= data.PEOPHONE %>" type="text" placeholder="Enter phone">
+                </div>
+                <div>
+                    <button class="formbutton" type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include('includes/foot.ejs') %>

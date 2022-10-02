@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    padding: 150px 10px;
+    font-family: 'Segoe UI Light';
+    background-color: #040f16;
+    color: #ffd276;
+}
+.navheader {
+    height: 130px;
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: 0.4s;
+    z-index: 1;
+}
+.down {
+    background-color: #ffd276;
+    border: none;
+}
+.frontlogo {
+    width: 110px;
+    margin-top: 10px;
+    border-radius: 60px;
+    border-color: #ffd276;
+    border-width: 2px;
+    border-style: solid;
+}
+.navbox {
+    margin-left: 40px;
+    display: flex;
+    justify-content:left;
+    max-width: 1292px;
+}
+.navmenu {
+    margin-top: 25px;
+    margin-left: 40px;
+    display: flex;
+    list-style: none;
+}
+.navmenuitem {
+    width: max-content;
+    margin: 0 10px;
+    font-size: 27px;
+    line-height: 80px;
+}
+.navmenuitem a {
+    color: #993559;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 10px;
+    transition: 0.7s;
+}
+.navmenuitem a:hover {
+    color: #6a2b57;
+    transition: 0.4s;
+    text-decoration: underline;
+}
+.navtoggle {
+    height: 70px;
+    padding: 10px 20px;
+    line-height: 60px;
+    background: none;
+    border: none;
+    display: none;
+}
+.navtoggle svg {
+    width: 50px;
+    height: 50px;
+}
+.barbox {
+    margin: 10px 0;
+}
+path {
+    fill: #da4c62 !important;
+}
+@media screen and (max-width: 768px) {
+    body {
+        padding: 120px 30px;
+    }
+    .navheader {
+        height: 80px;
+    }
+    .navbox {
+        justify-content:space-between;
+        margin-left: 20px;
+    }
+    .frontlogo {
+        width: 60px;
+        margin-top: 10px;
+        border-radius: 60px;
+    }
+    .navmenu {
+        width: 100%;
+        align-items: center;
+        margin-left: 0;
+        flex-direction: column;
+        background-color: #da4c62;
+        color: #6a2b57;
+        font-weight: 900;
+        position: fixed;
+        left: 0;
+        top: 55px;
+        text-align: center;
+        height: calc(100% - 60px);
+        overflow-y: auto;
+        left: 100%;
+        transition: left 0.3s;
+    }
+    .navtoggle {
+        display: block;
+    }
+    .navmenuvisible {
+        left: 0;
+    }
+    .navtoggle:focus:not(:focus-visible) {
+        outline:#040f16;
+    }
+    .barbox {
+        margin: 10px 0;
+        display: none;
+    }
+}
